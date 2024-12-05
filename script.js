@@ -1,21 +1,26 @@
-document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Ngừng hành động mặc định của form (không tải lại trang)
+// Lưu thông tin cá nhân
+document.getElementById('personalInfoForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Ngừng việc tải lại trang khi form được gửi
+    let name = document.getElementById('fullName').value;
+    let email = document.getElementById('email').value;
 
-    // Lấy các giá trị từ form
-    const location = document.getElementById('location').value;
-    const checkIn = document.getElementById('checkIn').value;
-    const checkOut = document.getElementById('checkOut').value;
-    const roomType = document.getElementById('roomType').value;
+    document.getElementById('savedInfo').textContent = "Tên: " + (name ? name : "Chưa nhập tên");
+    document.getElementById('savedEmail').textContent = "Email: " + (email ? email : "Chưa nhập email");
+});
 
-    // Kiểm tra thông tin đã đầy đủ chưa
-    if (!location || !checkIn || !checkOut || !roomType) {
-        alert("Vui lòng điền đầy đủ thông tin tìm kiếm.");
-        return;
+// Đăng xuất
+document.getElementById('logout').addEventListener('click', function () {
+    document.getElementById('savedInfo').textContent = "Tên: Chưa nhập tên";
+    document.getElementById('savedEmail').textContent = "Email: Chưa nhập email";
+});
+
+// Gửi câu hỏi
+document.getElementById('submitQuestion').addEventListener('click', function () {
+    let question = document.getElementById('customerQuestion').value;
+    if (question) {
+        alert("Câu hỏi của bạn đã được gửi!");
+        document.getElementById('customerQuestion').value = ""; // Xóa câu hỏi sau khi gửi
+    } else {
+        alert("Vui lòng nhập câu hỏi.");
     }
-
-    // Tạo URL tìm kiếm
-    const searchUrl = `searchResults.html?location=${location}&checkIn=${checkIn}&checkOut=${checkOut}&roomType=${roomType}`;
-
-    // Chuyển hướng người dùng đến trang kết quả tìm kiếm
-    window.location.href = searchUrl;
 });
