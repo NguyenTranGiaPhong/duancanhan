@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng Dụng Đặt Phòng Khách Sạn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ứng Dụng Đặt Phòng Khách Sạn</h1>
+        <nav>
+            <button id="searchBtn">Tìm Phòng</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="searchForm">
+            <h2>Tìm Phòng Khách Sạn</h2>
+            <form id="searchFormElement">
+                <div>
+                    <!-- Thêm label cho trường "Vị trí" -->
+                    <label for="location">Vị trí</label>
+                    <input type="text" id="location" placeholder="Nhập vị trí khách sạn" required
+                        title="Vị trí bạn muốn tìm" />
+                </div>
+                <div>
+                    <!-- Thêm label cho trường "Ngày nhận phòng" -->
+                    <label for="checkIn">Ngày nhận phòng</label>
+                    <input type="date" id="checkIn" required title="Chọn ngày nhận phòng" />
+                </div>
+                <div>
+                    <!-- Thêm label cho trường "Ngày trả phòng" -->
+                    <label for="checkOut">Ngày trả phòng</label>
+                    <input type="date" id="checkOut" required title="Chọn ngày trả phòng" />
+                </div>
+                <div>
+                    <!-- Thêm label cho trường "Loại phòng" -->
+                    <label for="roomType">Loại phòng</label>
+                    <select id="roomType" title="Chọn loại phòng bạn muốn đặt">
+                        <option value="single">Phòng đơn</option>
+                        <option value="double">Phòng đôi</option>
+                    </select>
+                </div>
+                <button type="submit">Tìm Kiếm</button>
+            </form>
+        </section>
+
+        <section id="hotelResults">
+            <!-- Các kết quả tìm kiếm sẽ xuất hiện ở đây -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Đặt phòng khách sạn</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
