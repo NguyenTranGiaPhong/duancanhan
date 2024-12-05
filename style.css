@@ -1,0 +1,143 @@
+/* Đặt kiểu toàn cục cho trang */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Sử dụng font Google Poppins */
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    /* Sử dụng màu nền sáng và tươi sáng */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Đặt kiểu cho tiêu đề của trang */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 42px;
+    font-weight: 700;
+    color: #34495e;
+    text-transform: uppercase;
+    /* Chữ in hoa */
+    letter-spacing: 2px;
+    /* Khoảng cách giữa các chữ */
+}
+
+/* Định dạng form */
+form {
+    max-width: 600px;
+    margin: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Tăng độ đổ bóng */
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* Thêm hiệu ứng đổ bóng khi hover */
+}
+
+/* Định dạng các label và input */
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #3498db;
+    /* Sử dụng màu xanh khi focus */
+    outline: none;
+}
+
+/* Định dạng nút submit */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #3498db;
+    /* Màu nền của nút */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    /* Màu nền khi hover */
+    transform: translateY(-2px);
+    /* Thêm hiệu ứng nhấn nút */
+}
+
+/* Đảm bảo responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    button {
+        padding: 14px;
+    }
+}
+
+/* Thêm background cho trang để tăng sự hấp dẫn */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.example.com/your-background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.1;
+    /* Mờ đi để không ảnh hưởng đến nội dung */
+}
+
+/* Tạo hiệu ứng chuyển động nhẹ cho các yếu tố khi tải trang */
+form {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
