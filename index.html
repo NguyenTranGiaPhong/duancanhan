@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -17,45 +17,110 @@
     </header>
 
     <main>
+        <!-- Phần Tìm Phòng -->
         <section id="searchForm">
             <h2>Tìm Phòng Khách Sạn</h2>
             <form id="searchFormElement">
                 <div>
-                    <!-- Thêm label cho trường "Vị trí" -->
                     <label for="location">Vị trí</label>
                     <input type="text" id="location" placeholder="Nhập vị trí khách sạn" required
                         title="Vị trí bạn muốn tìm" />
                 </div>
                 <div>
-                    <!-- Thêm label cho trường "Ngày nhận phòng" -->
                     <label for="checkIn">Ngày nhận phòng</label>
                     <input type="date" id="checkIn" required title="Chọn ngày nhận phòng" />
                 </div>
                 <div>
-                    <!-- Thêm label cho trường "Ngày trả phòng" -->
                     <label for="checkOut">Ngày trả phòng</label>
                     <input type="date" id="checkOut" required title="Chọn ngày trả phòng" />
                 </div>
                 <div>
-                    <!-- Thêm label cho trường "Loại phòng" -->
                     <label for="roomType">Loại phòng</label>
                     <select id="roomType" title="Chọn loại phòng bạn muốn đặt">
                         <option value="single">Phòng đơn</option>
                         <option value="double">Phòng đôi</option>
+                        <option value="suite">Phòng suite</option>
                     </select>
                 </div>
                 <button type="submit">Tìm Kiếm</button>
             </form>
         </section>
 
-        <section id="hotelResults">
-            <!-- Các kết quả tìm kiếm sẽ xuất hiện ở đây -->
+        <!-- Phần Thanh Toán -->
+        <section id="payment">
+            <h2>Thanh Toán</h2>
+            <label for="paymentMethod">Chọn phương thức thanh toán:</label>
+            <select id="paymentMethod">
+                <option value="creditCard">Thẻ tín dụng</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            <p>Chính sách hủy phòng: Hủy miễn phí trong vòng 24 giờ trước khi nhận phòng.</p>
+        </section>
+
+        <!-- Phần Đánh Giá -->
+        <section id="reviews">
+            <h2>Đánh Giá</h2>
+            <p>Đánh giá từ khách hàng trước: 4.5/5</p>
+            <p class="warning">Cảnh báo: Chất lượng phòng có thể thay đổi vào mùa cao điểm.</p>
+        </section>
+
+        <!-- Phần Hỗ Trợ Khách Hàng -->
+        <section id="customerSupport">
+            <h2>Hỗ Trợ Khách Hàng</h2>
+            <label for="customerQuestion">Nhập câu hỏi của bạn:</label>
+            <textarea id="customerQuestion" rows="4" placeholder="Nhập câu hỏi của bạn"></textarea>
+            <button id="submitQuestion">Gửi</button>
+        </section>
+
+        <!-- Phần Thông Tin Cá Nhân -->
+        <section id="personalInfo">
+            <h2>Thông Tin Cá Nhân</h2>
+            <form id="personalInfoForm">
+                <label for="fullName">Tên:</label>
+                <input type="text" id="fullName" placeholder="Nhập tên của bạn" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Nhập email của bạn" required />
+
+                <button type="submit">Lưu thông tin</button>
+            </form>
+
+            <h3>Thông tin cá nhân đã nhập:</h3>
+            <p id="savedInfo">Tên: Chưa nhập tên</p>
+            <p id="savedEmail">Email: Chưa nhập email</p>
+
+            <button id="logout">Đăng xuất</button>
+        </section>
+
+        <!-- Phần Lịch Sử Đặt Phòng -->
+        <section id="bookingHistory">
+            <h2>Lịch Sử Đặt Phòng</h2>
+            <table id="historyTable">
+                <thead>
+                    <tr>
+                        <th>Loại phòng</th>
+                        <th>Khách sạn</th>
+                        <th>Giá tiền (VND)</th>
+                        <th>Đặt phòng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Chưa có lịch sử đặt phòng.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Đặt phòng khách sạn</p>
     </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
 
     <script src="script.js"></script>
 </body>
